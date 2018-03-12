@@ -1,6 +1,7 @@
 package com.idt.yfzx.wdc.lightofandroidadvanced;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
@@ -12,8 +13,11 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.Toast;
 
-import com.idt.yfzx.wdc.lightofandroidadvance.adapter.HomeAdapter;
-import com.idt.yfzx.wdc.lightofandroidadvance.adapter.WaterFallAdapter;
+
+import com.idt.yfzx.wdc.lightofandroidadvanced.Utils.SystemUtils;
+import com.idt.yfzx.wdc.lightofandroidadvanced.activity.VolleyActivity;
+import com.idt.yfzx.wdc.lightofandroidadvanced.adapter.HomeAdapter;
+import com.idt.yfzx.wdc.lightofandroidadvanced.adapter.WaterFallAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +25,16 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements WaterFallAdapter.OnItemClickListener {
     private RecyclerView rv;
     private HomeAdapter homeAdapter;
-    private WaterFallAdapter waterFallAdapter ;
+    private WaterFallAdapter waterFallAdapter;
     private List<String> listData;
     private ConstraintLayout container;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "当前系统最大可使用内存为:" + SystemUtils.getMaxMemory(), Toast.LENGTH_SHORT).show();
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements WaterFallAdapter.
         rv = findViewById(R.id.common_recyclerview);
         //设置布局管理器 (线性排列 默认垂直排列)
 //        rv.setLayoutManager(new LinearLayoutManager(this));
-        rv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        rv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
 //        //设置水平排列
 //        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 //        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -59,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements WaterFallAdapter.
         listData.add("TabAdapter");
 //        listData.add("2");
 //        listData.add("3");
-
+        listData.add("Volley");
         for (int i = 0; i < 30; i++) {
             listData.add(i + "");
         }
@@ -73,9 +84,16 @@ public class MainActivity extends AppCompatActivity implements WaterFallAdapter.
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "OK!", Toast.LENGTH_SHORT).show();
-                if("TabAdapter".equals(listData.get(postion))){
+                if ("TabAdapter".equals(listData.get(postion))) {
                     //跳转activity
+                    return;
                 }
+                if ("Volley".equals(listData.get(postion))) {
+                    //跳转到volley activity
+                    startActivity(VolleyActivity.class);
+                    return;
+                }
+
             }
         }).show();
     }
@@ -87,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements WaterFallAdapter.
             public void onClick(DialogInterface dialogInterface, int i) {
                 //确定
                 listData.remove(position);
-              waterFallAdapter.notifyItemRemoved(position);
+                waterFallAdapter.notifyItemRemoved(position);
 //                homeAdapter.notifyDataSetChanged();
             }
         }).setNegativeButton("否", new DialogInterface.OnClickListener() {
@@ -96,5 +114,13 @@ public class MainActivity extends AppCompatActivity implements WaterFallAdapter.
                 dialogInterface.dismiss();
             }
         }).show();
+    }
+
+
+    public void startActivity(Class c) {
+        Intent intent = new Intent();
+        intent.setClass(this, c);
+        this.startActivity(intent);
+
     }
 }

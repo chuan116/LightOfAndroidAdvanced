@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.idt.yfzx.wdc.lightofandroidadvance.R;
+import com.idt.yfzx.wdc.lightofandroidadvanced.R;
 
 import java.util.ArrayList;
 import java.util.List;

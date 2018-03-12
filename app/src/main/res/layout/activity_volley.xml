@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/volley_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:onClick="doGet"
+        android:text="get请求" />
+
+    <Button
+        android:id="@+id/volley_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:onClick="doPost"
+        android:text="post请求" />
+
+    <Button
+        android:id="@+id/volley_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:onClick="doJson"
+        android:text="请求json数据请求" />
+
+    <Button
+        android:id="@+id/volley_imageRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:onClick="doPic"
+        android:text="imageRequest加载图片" />
+
+    <Button
+        android:id="@+id/volley_imageLader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:onClick="doImageLoader"
+        android:text="imageLoder加载图片" />
+
+    <Button
+        android:id="@+id/netWorkImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:onClick="doNetworkImageView"
+        android:text="netWorkImageView" />
+
+    <Button
+        android:id="@+id/go_newslist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:text="新闻图文列表"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:text="显示结果" />
+
+    <ImageView
+        android:id="@+id/volley_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip" />
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/iv_volley_networkimagview"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:visibility="visible">
+    </com.android.volley.toolbox.NetworkImageView>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/volley_imageNet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dip">
+
+        <TextView
+            android:id="@+id/volley_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+    </ScrollView>
+</LinearLayout>

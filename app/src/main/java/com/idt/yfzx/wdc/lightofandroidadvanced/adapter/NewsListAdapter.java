@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
 import com.idt.yfzx.wdc.lightofandroidadvanced.R;
 
 import java.util.List;
@@ -16,14 +15,14 @@ import java.util.List;
  * Created by 王大川 on 2018-03-06.
  */
 
-public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> {
+public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.MyViewHolder> {
     private List<String> listdata;
     Context mcontext;
 
 
     OnItemClickListener onItemClickListener;
 
-    public HomeAdapter(List<String> listdata, Context mcontext) {
+    public NewsListAdapter(List<String> listdata, Context mcontext) {
         this.mcontext = mcontext;
         this.listdata = listdata;
     }
@@ -62,7 +61,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView mian_txt;
-
         public MyViewHolder(View itemView) {
             super(itemView);
             mian_txt = itemView.findViewById(R.id.main_txt);
