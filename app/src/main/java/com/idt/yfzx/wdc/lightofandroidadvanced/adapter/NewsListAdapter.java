@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.android.volley.toolbox.NetworkImageView;
 import com.idt.yfzx.wdc.lightofandroidadvanced.R;
+import com.idt.yfzx.wdc.lightofandroidadvanced.entity.NewsItemEntity;
 
 import java.util.List;
 
@@ -16,42 +18,26 @@ import java.util.List;
  */
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.MyViewHolder> {
-    private List<String> listdata;
+    private List<NewsItemEntity> listdata;
     Context mcontext;
 
 
     OnItemClickListener onItemClickListener;
 
-    public NewsListAdapter(List<String> listdata, Context mcontext) {
+    public NewsListAdapter(List<NewsItemEntity> listdata, Context mcontext) {
         this.mcontext = mcontext;
         this.listdata = listdata;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        MyViewHolder holder = new MyViewHolder(LayoutInflater.from(mcontext).inflate(R.layout.home_list_item, parent, false));
+        MyViewHolder holder = new MyViewHolder(LayoutInflater.from(mcontext).inflate(R.layout.news_list_item, parent, false));
         return holder;
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        holder.mian_txt.setText(listdata.get(position));
-        holder.mian_txt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onItemClickListener.onitemSingleClick(position);
 
-            }
-        });
-        holder.mian_txt.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-
-                onItemClickListener.onitemLongClick(position);
-
-                return false;
-            }
-        });
     }
 
     @Override
@@ -60,10 +46,13 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.MyView
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView mian_txt;
+
+        TextView txt_title;
+        NetworkImageView net_iv;
         public MyViewHolder(View itemView) {
             super(itemView);
-            mian_txt = itemView.findViewById(R.id.main_txt);
+            txt_title = itemView.findViewById(R.id.txt_title);
+            net_iv = itemView.findViewById(R.id.net_iv);
         }
     }
 

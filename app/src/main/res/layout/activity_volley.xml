@@ -4,61 +4,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <Button
-        android:id="@+id/volley_get"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
-        android:onClick="doGet"
-        android:text="get请求" />
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/volley_get"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:onClick="doGet"
+            android:text="get请求" />
 
-    <Button
-        android:id="@+id/volley_post"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
-        android:onClick="doPost"
-        android:text="post请求" />
+        <Button
+            android:id="@+id/volley_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:onClick="doPost"
+            android:text="post请求" />
 
-    <Button
-        android:id="@+id/volley_json"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
-        android:onClick="doJson"
-        android:text="请求json数据请求" />
+        <Button
+            android:id="@+id/volley_json"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:onClick="doJson"
+            android:text="请求json数据请求" />
 
-    <Button
-        android:id="@+id/volley_imageRequest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
-        android:onClick="doPic"
-        android:text="imageRequest加载图片" />
+        <Button
+            android:id="@+id/volley_imageRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:onClick="doPic"
+            android:text="imageRequest加载图片" />
 
-    <Button
-        android:id="@+id/volley_imageLader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
-        android:onClick="doImageLoader"
-        android:text="imageLoder加载图片" />
+        <Button
+            android:id="@+id/volley_imageLader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:onClick="doImageLoader"
+            android:text="imageLoder加载图片" />
 
-    <Button
-        android:id="@+id/netWorkImageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
-        android:onClick="doNetworkImageView"
-        android:text="netWorkImageView" />
+        <Button
+            android:id="@+id/netWorkImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:onClick="doNetworkImageView"
+            android:text="netWorkImageView" />
 
-    <Button
-        android:id="@+id/go_newslist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
-        android:text="新闻图文列表"/>
+        <Button
+            android:id="@+id/go_newslist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:onClick="setGoNewslist"
+            android:text="新闻图文列表"/>
+    </LinearLayout>
+
+
+</ScrollView>
 
     <TextView
         android:layout_width="match_parent"
@@ -91,6 +102,7 @@
 
         <TextView
             android:id="@+id/volley_result"
+            android:singleLine="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="" />

@@ -2,12 +2,61 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_margin="2dp"
+    android:padding="10dp"
     android:layout_height="wrap_content">
-<ImageView
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:layout_marginLeft="20dp"
-    android:src="@mipmap/pic_default"/>
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/net_iv"
+        android:layout_alignParentRight="true"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+       />
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/net_iv"
+        android:layout_alignTop="@+id/net_iv"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/net_iv"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:text="新闻标题新闻标题新闻sdfs asdfs fad asdf adf 新 闻标dfafs sdfasdf  safda sdg题 asdf gsd  ss1是非得失的"
+        android:textColor="@color/black"
+        android:textSize="22sp">
+
+    </TextView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_below="@+id/net_iv"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="央视新闻"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="50评论"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="5分钟前"/>
+
+    </LinearLayout>
 
 
 
