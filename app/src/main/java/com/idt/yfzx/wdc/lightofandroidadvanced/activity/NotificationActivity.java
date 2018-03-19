@@ -45,7 +45,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()){
+        switch (v.getId()) {
             case R.id.btn_normal:
                 Notification.Builder builder = new Notification.Builder(this);
                 Intent mIntet = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.baidu.com"));
@@ -59,7 +59,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
                 Notification notification = builder.build();
                 NotificationManager mNotifyMgr =
                         (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                mNotifyMgr.notify(1,notification);
+                mNotifyMgr.notify(1, notification);
                 break;
             case R.id.btn_foldable:
                 RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.view_fold_notification);
@@ -76,9 +76,25 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
                 notification1.bigContentView = remoteViews;
                 NotificationManager mNotifyMgr1 =
                         (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                mNotifyMgr1.notify(2,notification1);
+                mNotifyMgr1.notify(2, notification1);
                 break;
             case R.id.btn_hangable:
+                Notification.Builder builder2 = new Notification.Builder(this);
+                builder2.setSmallIcon(R.mipmap.notification_icon);
+                builder2.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.notification_icon));
+                builder2.setAutoCancel(true);
+                builder2.setContentTitle("悬挂式通知");
+                builder2.setContentText("public");
+                //设置点击跳转
+                Intent hangIntent = new Intent();
+                hangIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                hangIntent.setClass(this, VolleyActivity.class);
+                PendingIntent hangPenddingIntent = PendingIntent.getActivity(this, 0, hangIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+                builder2.setFullScreenIntent(hangPenddingIntent, true);
+                Notification notification2 = builder2.build();
+                NotificationManager mNotifyMgr2 =
+                        (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                mNotifyMgr2.notify(3, notification2);
                 break;
         }
     }
