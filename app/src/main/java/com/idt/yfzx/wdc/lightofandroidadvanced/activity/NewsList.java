@@ -20,6 +20,7 @@ public class NewsList extends AppCompatActivity implements NewsModel.OnNewsLoadL
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_news_list);
         initView();
+        loadData();
     }
 
     private void initView() {
@@ -35,6 +36,11 @@ public class NewsList extends AppCompatActivity implements NewsModel.OnNewsLoadL
 
     @Override
     public void onFail(List<NewsItemEntity> result_list) {
+
+    }
+
+    public void  loadData(){
+        modelImpl.getTopNewsList(this,this);
 
     }
 }
