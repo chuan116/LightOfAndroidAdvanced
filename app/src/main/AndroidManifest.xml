@@ -28,7 +28,9 @@
         </receiver>
 
         <activity android:name=".activity.VolleyActivity" />
-        <activity android:name=".activity.NewsList"></activity>
+        <activity android:name=".activity.NewsList" />
+        <activity android:name=".activity.CardViewActivity" />
+        <activity android:name=".activity.NotificationActivity"></activity>
     </application>
 
 </manifest>

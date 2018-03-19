@@ -7,6 +7,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 
 import com.idt.yfzx.wdc.lightofandroidadvanced.Utils.SystemUtils;
+import com.idt.yfzx.wdc.lightofandroidadvanced.activity.CardViewActivity;
+import com.idt.yfzx.wdc.lightofandroidadvanced.activity.NotificationActivity;
 import com.idt.yfzx.wdc.lightofandroidadvanced.activity.VolleyActivity;
 import com.idt.yfzx.wdc.lightofandroidadvanced.adapter.HomeAdapter;
 import com.idt.yfzx.wdc.lightofandroidadvanced.adapter.WaterFallAdapter;
@@ -71,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements WaterFallAdapter.
 //        listData.add("2");
 //        listData.add("3");
         listData.add("Volley");
+        listData.add("CardView");
+        listData.add("Notification");
         for (int i = 0; i < 30; i++) {
             listData.add(i + "");
         }
@@ -92,6 +97,16 @@ public class MainActivity extends AppCompatActivity implements WaterFallAdapter.
                     //跳转到volley activity
                     startActivity(VolleyActivity.class);
                     return;
+                }
+
+                if("CardView".equals(listData.get(postion))){
+                    startActivity(CardViewActivity.class);
+                    return;
+
+                }
+
+                if("Notification".equals(listData.get(postion))){
+                    startActivity(NotificationActivity.class);
                 }
 
             }

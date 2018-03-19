@@ -7,8 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.android.volley.toolbox.Volley;
 import com.idt.yfzx.wdc.lightofandroidadvanced.R;
+import com.idt.yfzx.wdc.lightofandroidadvanced.Utils.VolleyBitmapCache;
+import com.idt.yfzx.wdc.lightofandroidadvanced.activity.VolleyActivity;
 import com.idt.yfzx.wdc.lightofandroidadvanced.entity.NewsItemEntity;
 
 import java.util.List;
@@ -38,6 +43,14 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.MyView
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 
+        holder.txt_title.setText(listdata.get(position).getMovieName());
+        // 创建一个请求队列
+        RequestQueue requestQueue = Volley.newRequestQueue(mcontext);
+        // 创建一个Imageloader
+        ImageLoader imageLoader = new ImageLoader(requestQueue, new VolleyBitmapCache());
+        holder.net_iv.setDefaultImageResId(R.mipmap.lp_default_mtime);
+        holder.net_iv.setErrorImageResId(R.mipmap.lp_default_mtime);
+        holder.net_iv.setImageUrl(listdata.get(position).getCoverImg(), imageLoader);
     }
 
     @Override
@@ -49,6 +62,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.MyView
 
         TextView txt_title;
         NetworkImageView net_iv;
+
         public MyViewHolder(View itemView) {
             super(itemView);
             txt_title = itemView.findViewById(R.id.txt_title);

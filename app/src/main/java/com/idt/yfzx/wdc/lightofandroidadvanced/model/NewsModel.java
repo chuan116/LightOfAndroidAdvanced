@@ -3,6 +3,7 @@ package com.idt.yfzx.wdc.lightofandroidadvanced.model;
 import android.content.Context;
 
 import com.idt.yfzx.wdc.lightofandroidadvanced.entity.NewsItemEntity;
+import com.idt.yfzx.wdc.lightofandroidadvanced.entity.Trailers;
 import com.idt.yfzx.wdc.lightofandroidadvanced.model.impl.NewsModelImpl;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public interface NewsModel {
 
 
     public  interface OnNewsLoadListener{
-        public void  onSuccess(List<NewsItemEntity> result_list);
-        public void onFail(List<NewsItemEntity> result_list);
+        public void  onSuccess(Trailers result_list);
+        public void onFail(Trailers result_list);
     }
 }
