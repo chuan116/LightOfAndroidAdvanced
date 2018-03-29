@@ -3,15 +3,14 @@ package com.idt.yfzx.wdc.lightofandroidadvanced;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements WaterFallAdapter.
     private HomeAdapter homeAdapter;
     private WaterFallAdapter waterFallAdapter;
     private List<String> listData;
-    private ConstraintLayout container;
+    private RelativeLayout container;
 
     @Override
     protected void onResume() {
@@ -75,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements WaterFallAdapter.
         listData.add("Volley");
         listData.add("CardView");
         listData.add("Notification");
+        listData.add("CustomDateTimePicker");
         listData.add("自定义即时通讯界面");
         for (int i = 0; i < 30; i++) {
             listData.add(i + "");
@@ -107,6 +107,11 @@ public class MainActivity extends AppCompatActivity implements WaterFallAdapter.
 
                 if("Notification".equals(listData.get(postion))){
                     startActivity(NotificationActivity.class);
+                }
+
+                if("CustomDateTimePicker".equals(listData.get(postion))){
+                    startActivity(com.liuwan.customdatepicker.MainActivity.class);
+
                 }
 
             }

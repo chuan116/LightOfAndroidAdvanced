@@ -11,7 +11,6 @@ import com.liuwan.customdatepicker.widget.CustomDatePicker;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-
 /**
  * Created by liuwan on 2016/9/28.
  */
@@ -24,7 +23,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.datetimepicker_activity_main);
 
         selectTime = (RelativeLayout) findViewById(R.id.selectTime);
         selectTime.setOnClickListener(this);
