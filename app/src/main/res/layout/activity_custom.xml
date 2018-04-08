@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.idt.yfzx.wdc.lightofandroidadvanced.activity.CustomActivity">
-
-
-    <com.idt.yfzx.wdc.lightofandroidadvanced.custom.PieView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="500dp" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="饼图"/>
+            <!--饼图 -->
+            <com.idt.yfzx.wdc.lightofandroidadvanced.custom.PieView
+                android:layout_width="match_parent"
+                android:layout_height="500dp" />
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="录制picture"/>
+            <!-- 录制picture -->
+            <com.idt.yfzx.wdc.lightofandroidadvanced.custom.RecoardPicture
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
 </android.support.constraint.ConstraintLayout>
