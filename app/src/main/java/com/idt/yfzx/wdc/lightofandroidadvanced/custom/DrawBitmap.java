@@ -1,20 +1,27 @@
 package com.idt.yfzx.wdc.lightofandroidadvanced.custom;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Picture;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.facebook.imageutils.BitmapUtil;
+import com.idt.yfzx.wdc.lightofandroidadvanced.R;
+import com.idt.yfzx.wdc.lightofandroidadvanced.Utils.GetBitMapUtil;
+
 /**
  * Created by 王大川 on 2018-04-08.
  */
 
-public class RecoardPicture extends View {
+public class DrawBitmap extends View {
     private int screenW;
     private int screenH;
     //1 创建Picture
@@ -24,22 +31,22 @@ public class RecoardPicture extends View {
     private void recording() {
         //开始录制
         Canvas canvas = mPicture.beginRecording(screenW, screenH);
-        //创建一个画笔
-        Paint paint = new Paint();
-        paint.setStyle(Paint.Style.FILL);
-        RectF rectF = new RectF(0, 0, screenW, screenH);
-        // 绘制背景矩形
-        paint.setColor(Color.GRAY);
-        canvas.drawRect(rectF, paint);
-        // 绘制一个圆
-        paint.setColor(Color.BLUE);
-        canvas.translate(screenW / 2, screenH / 2);
-        canvas.drawCircle(0, 0, 300, paint);
+        Bitmap mbitmap = GetBitMapUtil.getBitMapFromRaw(mcontext, R.raw.onepiece);
+        canvas.drawBitmap(mbitmap, new Matrix(), new Paint());
+        // 指定图片绘制区域(左上角的四分之一)
+        Rect src = new Rect(0, 0, mbitmap.getWidth(), mbitmap.getHeight());
+        // 指定图片在屏幕上显示的区域
+        Rect dst = new Rect(0, 0, screenW, screenH);
+        // 绘制图片
+        canvas.drawBitmap(mbitmap, src, dst, null);
         mPicture.endRecording();
     }
 
-    public RecoardPicture(Context context, @Nullable AttributeSet attrs) {
+    private Context mcontext;
+
+    public DrawBitmap(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        this.mcontext = context;
 //        recording();
     }
 
@@ -60,15 +67,6 @@ public class RecoardPicture extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawPicture(mPicture);
-
-//        canvas.drawPicture(mPicture, new RectF(0, 0, mPicture.getWidth(), 200));
-        // 包装成为Drawable
-//        PictureDrawable drawable = new PictureDrawable(mPicture);
-//// 设置绘制区域 -- 注意此处所绘制的实际内容不会缩放
-//        drawable.setBounds(0,0,250,mPicture.getHeight());
-//// 绘制
-//        drawable.draw(canvas);
-
     }
 
 }
