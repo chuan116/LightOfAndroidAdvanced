@@ -46,6 +46,16 @@
             <com.idt.yfzx.wdc.lightofandroidadvanced.custom.PlantVSZombie
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="drawpath使用"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+            <com.idt.yfzx.wdc.lightofandroidadvanced.custom.DrawPath
+                android:layout_width="match_parent"
+                android:layout_height="1000dp" />
         </LinearLayout>
 
 

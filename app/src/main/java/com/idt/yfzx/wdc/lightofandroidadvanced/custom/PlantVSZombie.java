@@ -27,11 +27,12 @@ public class PlantVSZombie extends View {
     private Context mcontext;
     private int  currentPage  = 1 ;
     private boolean  isFirstIn  = true;
-
+    Bitmap mbitmap;
 
     public PlantVSZombie(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         this.mcontext = context;
+        mbitmap= GetBitMapUtil.getBitMapFromRaw(mcontext, R.raw.plantvszombie);
     }
 
     @Override
@@ -49,7 +50,7 @@ public class PlantVSZombie extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Bitmap mbitmap = GetBitMapUtil.getBitMapFromRaw(mcontext, R.raw.plantvszombie);
+
         // 指定图片绘制区域(左上角的四分之一)
         int  fromwidth   =  mbitmap.getWidth()*((currentPage>11?(currentPage-11):currentPage)-1)/11;
         int  fromheight  =  currentPage>11?mbitmap.getHeight()/2:0;

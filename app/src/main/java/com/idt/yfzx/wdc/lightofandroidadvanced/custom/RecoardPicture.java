@@ -61,9 +61,9 @@ public class RecoardPicture extends View {
         super.onDraw(canvas);
         canvas.drawPicture(mPicture);
 
-//        canvas.drawPicture(mPicture, new RectF(0, 0, mPicture.getWidth(), 200));
+    // canvas.drawPicture(mPicture, new RectF(0, 0, mPicture.getWidth(), 200));
         // 包装成为Drawable
-//        PictureDrawable drawable = new PictureDrawable(mPicture);
+    // PictureDrawable drawable = new PictureDrawable(mPicture);
 //// 设置绘制区域 -- 注意此处所绘制的实际内容不会缩放
 //        drawable.setBounds(0,0,250,mPicture.getHeight());
 //// 绘制
