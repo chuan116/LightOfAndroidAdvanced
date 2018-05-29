@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements WaterFallAdapter.
     @Override
     protected void onResume() {
         super.onResume();
-        Toast.makeText(this, "当前系统最大可使用内存为:" + SystemUtils.getMaxMemory(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "当前系统最大可使用内存是:" + SystemUtils.getMaxMemory(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
