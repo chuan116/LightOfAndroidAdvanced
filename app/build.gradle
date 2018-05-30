@@ -33,5 +33,9 @@ dependencies {
     implementation 'com.android.support:palette-v7:26.1.0'
     implementation project(':CustomDatePicker')
     implementation 'com.jakewharton:butterknife:8.8.1'
+//    implementation 'com.squareup:otto:+'
+//    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation files('libs/dhccpay-1.0.0.aar')
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
