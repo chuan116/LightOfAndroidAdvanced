@@ -26,7 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         onBeforeInitial();
-        //填绑定内容
+        //注册butterknife 绑定
         ButterKnife.bind(this);
         //订阅otto事件
         BusProvider.getInstance().register(this);
