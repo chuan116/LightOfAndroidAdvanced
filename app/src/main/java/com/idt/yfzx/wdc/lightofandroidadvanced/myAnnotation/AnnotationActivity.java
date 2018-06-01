@@ -12,7 +12,7 @@ public class AnnotationActivity extends AnnotationBaseActivity {
 
     public final String  TAG = this.getClass().getName();
 
-  @WDCBindView(viewId = R.id.txt_main_title)
+//  @WDCBindView(viewId = R.id.txt_main_title)
   public TextView txt;
 
   @WDCBindView(viewId = R.id.btn_clickme)
