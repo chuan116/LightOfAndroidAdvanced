@@ -39,16 +39,18 @@
         <activity android:name=".activity.Otto.OttoEntrance" />
         <activity android:name=".activity.Otto.OttoActivityB" />
         <activity android:name=".activity.SignActivity" />
-        <activity android:name=".activity.EventBus.EventBusA"></activity>
+        <activity android:name=".activity.EventBus.EventBusA" />
         <activity android:name=".activity.EventBus.EventBusB" />
-        <activity android:name=".activity.RXJava.RXJavaActivity">
-        </activity>
-        <activity android:name=".mvp.view.MVP_Entrance">
+        <activity android:name=".activity.RXJava.RXJavaActivity" />
+        <activity android:name=".mvp.view.MVP_Entrance"></activity>
+        <activity android:name=".myAnnotation.AnnotationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".myAnnotation.AnnotationBaseActivity"></activity>
     </application>
 
 </manifest>
