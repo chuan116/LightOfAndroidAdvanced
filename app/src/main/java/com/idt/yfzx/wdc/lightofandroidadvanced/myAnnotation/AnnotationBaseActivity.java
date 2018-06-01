@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.idt.yfzx.wdc.lightofandroidadvanced.Utils.VerifyPermission;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -19,6 +21,8 @@ public abstract class AnnotationBaseActivity extends AppCompatActivity {
         onBeforeInitial();
         BindFramework.bind(this);
         onAfterInitial();
+
+        VerifyPermission.verifyStoragePermissions(this);
     }
 
     public abstract void onAfterInitial();
