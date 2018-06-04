@@ -33,11 +33,13 @@ dependencies {
     implementation 'com.android.support:palette-v7:26.1.0'
     implementation project(':CustomDatePicker')
     implementation 'com.jakewharton:butterknife:8.8.1'
-//    implementation 'com.squareup:otto:+'
-//    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.squareup:otto:+'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'org.greenrobot:eventbus:3.0.0'
-    implementation files('libs/dhccpay-1.0.0.aar')
     implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+//    implementation 'cn.yipianfengye.android:zxing-library:2.2' 第三方 zxing 类库
+    implementation 'com.google.zxing:core:3.3.0';
+    implementation 'com.google.zxing:android-core:3.3.0';
 }

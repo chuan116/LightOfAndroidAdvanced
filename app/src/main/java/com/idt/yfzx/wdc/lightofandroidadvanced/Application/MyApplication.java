@@ -3,6 +3,7 @@ package com.idt.yfzx.wdc.lightofandroidadvanced.Application;
 import android.app.Application;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.idt.yfzx.wdc.lightofandroidadvanced.BuildConfig;
 import com.idt.yfzx.wdc.lightofandroidadvanced.Utils.crash.CrashHandler;
 import com.idt.yfzx.wdc.lightofandroidadvanced.Utils.crash.MyActivityLifecycleCallbacks;
 
@@ -19,8 +20,12 @@ public class MyApplication extends Application {
         Fresco.initialize(this);//fresco 初始化 只能在全局application中初始化
         callback  = new MyActivityLifecycleCallbacks();
         this.registerActivityLifecycleCallbacks(callback);
-        CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.init(this,callback);
+        if(!BuildConfig.DEBUG){
+            CrashHandler crashHandler = CrashHandler.getInstance();
+            crashHandler.init(this, callback);
+        }
+
+
 
     }
 

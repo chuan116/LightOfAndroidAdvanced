@@ -8,246 +8,246 @@
     android:layout_alignParentTop="true"
     android:background="#E8E8E8"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="4dp">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#ffffff"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:padding="4dp">-->
 
-        <LinearLayout
-            android:id="@+id/back_btn"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:background="@drawable/back_btn_select">
+        <!--<LinearLayout-->
+            <!--android:id="@+id/back_btn"-->
+            <!--android:layout_width="36dp"-->
+            <!--android:layout_height="36dp"-->
+            <!--android:background="@drawable/back_btn_select">-->
 
-            <ImageView
-                android:id="@+id/goBack"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/back_img" />
-        </LinearLayout>
+            <!--<ImageView-->
+                <!--android:id="@+id/goBack"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@drawable/back_img" />-->
+        <!--</LinearLayout>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="签约"
-            android:textColor="#646464"
-            android:textSize="20sp" />
-    </LinearLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#dedede" />
-            <!--提示-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingTop="10dp">
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:text="签约"-->
+            <!--android:textColor="#646464"-->
+            <!--android:textSize="20sp" />-->
+    <!--</LinearLayout>-->
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical">-->
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="#dedede" />-->
+            <!--&lt;!&ndash;提示&ndash;&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:paddingBottom="10dp"-->
+                <!--android:paddingLeft="15dp"-->
+                <!--android:paddingRight="15dp"-->
+                <!--android:paddingTop="10dp">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="提示：您暂未签约，请完成签约信息后进行支付"
-                    android:textColor="@color/sub_title_color"
-                    android:textSize="15sp" />
-
-
-            </LinearLayout>
-            <!--姓名 etName-->
-            <com.dhcc.dhccpay.view.SignForm
-                android:id="@+id/etName"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:title_txt="姓        名"
-                app:title_txtcolor="@color/main_title_color"
-                app:title_txtSize="16sp"
-                app:title_txtStyle="bold"
-                app:content_hint="请输入您的姓名"
-                app:content_txtSize ="17sp"
-                app:content_txtColor="@color/sub_title_color"
-                app:content_hintColor="@color/datepicker_disable_bg_color"
-                android:layout_marginBottom="1px"
-                ></com.dhcc.dhccpay.view.SignForm>
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="提示：您暂未签约，请完成签约信息后进行支付"-->
+                    <!--android:textColor="@color/sub_title_color"-->
+                    <!--android:textSize="15sp" />-->
 
 
-
-            <!--卡号etCardId-->
-            <com.dhcc.dhccpay.view.SignForm
-                android:id="@+id/etCardId"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:title_txt="卡        号"
-                app:title_txtcolor="@color/main_title_color"
-                app:title_txtSize="16sp"
-                app:title_txtStyle="bold"
-                app:content_hint="请输入银行卡号"
-                app:content_txtSize ="17sp"
-                app:content_txtColor="@color/sub_title_color"
-                app:content_hintColor="@color/datepicker_disable_bg_color"
-                app:content_digits="1234567890"
-                android:layout_marginBottom="1px"
-                ></com.dhcc.dhccpay.view.SignForm>
-
-            <!--用户类型 etCardType imgCardType-->
-
-            <com.dhcc.dhccpay.view.SignForm
-                android:id="@+id/etCardType"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:title_txt="开户类型"
-                app:title_txtcolor="@color/main_title_color"
-                app:title_txtSize="16sp"
-                app:title_txtStyle="bold"
-                app:content_hint="开户类型"
-                app:content_txtSize ="17sp"
-                app:content_txtColor="@color/sub_title_color"
-                app:content_hintColor="@color/datepicker_disable_bg_color"
-                app:content_Editable="false"
-                android:layout_marginBottom="1px"
-                ></com.dhcc.dhccpay.view.SignForm>
+            <!--</LinearLayout>-->
+            <!--&lt;!&ndash;姓名 etName&ndash;&gt;-->
+            <!--<com.dhcc.dhccpay.view.SignForm-->
+                <!--android:id="@+id/etName"-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:title_txt="姓        名"-->
+                <!--app:title_txtcolor="@color/main_title_color"-->
+                <!--app:title_txtSize="16sp"-->
+                <!--app:title_txtStyle="bold"-->
+                <!--app:content_hint="请输入您的姓名"-->
+                <!--app:content_txtSize ="17sp"-->
+                <!--app:content_txtColor="@color/sub_title_color"-->
+                <!--app:content_hintColor="@color/datepicker_disable_bg_color"-->
+                <!--android:layout_marginBottom="1px"-->
+                <!--&gt;</com.dhcc.dhccpay.view.SignForm>-->
 
 
 
-            <!--有效日期 etCardTime imgCardTime-->
-            <com.dhcc.dhccpay.view.SignForm
-                android:id="@+id/etCardTime"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:title_txt="有  效  期"
-                app:title_txtcolor="@color/main_title_color"
-                app:title_txtSize="16sp"
-                app:title_txtStyle="bold"
-                app:content_hint="请选择信用卡有效期"
-                app:content_txtSize ="17sp"
-                app:content_txtColor="@color/sub_title_color"
-                app:content_hintColor="@color/datepicker_disable_bg_color"
-                app:content_Editable="false"
-                android:layout_marginBottom="1px"
-                ></com.dhcc.dhccpay.view.SignForm>
+            <!--&lt;!&ndash;卡号etCardId&ndash;&gt;-->
+            <!--<com.dhcc.dhccpay.view.SignForm-->
+                <!--android:id="@+id/etCardId"-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:title_txt="卡        号"-->
+                <!--app:title_txtcolor="@color/main_title_color"-->
+                <!--app:title_txtSize="16sp"-->
+                <!--app:title_txtStyle="bold"-->
+                <!--app:content_hint="请输入银行卡号"-->
+                <!--app:content_txtSize ="17sp"-->
+                <!--app:content_txtColor="@color/sub_title_color"-->
+                <!--app:content_hintColor="@color/datepicker_disable_bg_color"-->
+                <!--app:content_digits="1234567890"-->
+                <!--android:layout_marginBottom="1px"-->
+                <!--&gt;</com.dhcc.dhccpay.view.SignForm>-->
+
+            <!--&lt;!&ndash;用户类型 etCardType imgCardType&ndash;&gt;-->
+
+            <!--<com.dhcc.dhccpay.view.SignForm-->
+                <!--android:id="@+id/etCardType"-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:title_txt="开户类型"-->
+                <!--app:title_txtcolor="@color/main_title_color"-->
+                <!--app:title_txtSize="16sp"-->
+                <!--app:title_txtStyle="bold"-->
+                <!--app:content_hint="开户类型"-->
+                <!--app:content_txtSize ="17sp"-->
+                <!--app:content_txtColor="@color/sub_title_color"-->
+                <!--app:content_hintColor="@color/datepicker_disable_bg_color"-->
+                <!--app:content_Editable="false"-->
+                <!--android:layout_marginBottom="1px"-->
+                <!--&gt;</com.dhcc.dhccpay.view.SignForm>-->
 
 
-            <!--cvv2-->
-            <com.dhcc.dhccpay.view.SignForm
-                android:id="@+id/etCVV2Id"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:title_txt="C V V 2   "
-                app:title_txtcolor="@color/main_title_color"
-                app:title_txtSize="16sp"
-                app:title_txtStyle="bold"
-                app:content_hint="请输入CVV2号码"
-                app:content_txtSize ="17sp"
-                app:content_txtColor="@color/sub_title_color"
-                app:content_hintColor="@color/datepicker_disable_bg_color"
-                android:layout_marginBottom="1px"
-                ></com.dhcc.dhccpay.view.SignForm>
 
-            <!--证件类型 etCertCardType imgCertCardType-->
-            <com.dhcc.dhccpay.view.SignForm
-                android:id="@+id/etCertCardType"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:title_txt="证件类型"
-                app:title_txtcolor="@color/main_title_color"
-                app:title_txtSize="16sp"
-                app:title_txtStyle="bold"
-                app:content_hint="请选择证件类型"
-                app:content_txtSize ="17sp"
-                app:content_txtColor="@color/sub_title_color"
-                app:content_hintColor="@color/datepicker_disable_bg_color"
-                android:layout_marginBottom="1px"
-                ></com.dhcc.dhccpay.view.SignForm>
-
-            <!--证件号etCertCardId-->
-            <com.dhcc.dhccpay.view.SignForm
-                android:id="@+id/etCertCardId"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:title_txt="证件号码"
-                app:title_txtcolor="@color/main_title_color"
-                app:title_txtSize="16sp"
-                app:title_txtStyle="bold"
-                app:content_hint="请输入证件号码"
-                app:content_txtSize ="17sp"
-                app:content_txtColor="@color/sub_title_color"
-                app:content_hintColor="@color/datepicker_disable_bg_color"
-                android:layout_marginBottom="1px"
-                ></com.dhcc.dhccpay.view.SignForm>
-
-            <!--手机号etPhoneNum-->
-            <com.dhcc.dhccpay.view.SignForm
-                android:id="@+id/etPhoneNum"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:title_txt="手  机  号"
-                app:title_txtcolor="@color/main_title_color"
-                app:title_txtSize="16sp"
-                app:title_txtStyle="bold"
-                app:content_hint="请输入手机号码"
-                app:content_txtSize ="17sp"
-                app:content_txtColor="@color/sub_title_color"
-                app:content_hintColor="@color/datepicker_disable_bg_color"
-                app:content_digits="1234567890"
-                android:layout_marginBottom="1px"
-                android:layout_marginTop="15dp"
-                ></com.dhcc.dhccpay.view.SignForm>
-
-            <!--验证码 etCode imgCertCardType-->
-            <com.dhcc.dhccpay.view.SignForm
-                android:id="@+id/etCode"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:title_txt="验  证  码"
-                app:title_txtcolor="@color/main_title_color"
-                app:title_txtSize="16sp"
-                app:title_txtStyle="bold"
-                app:content_hint="请输入验证码"
-                app:content_txtSize ="17sp"
-                app:content_txtColor="@color/sub_title_color"
-                app:content_hintColor="@color/datepicker_disable_bg_color"
-                app:content_digits="1234567890"
-                android:layout_marginBottom="1px"
-                ></com.dhcc.dhccpay.view.SignForm>
+            <!--&lt;!&ndash;有效日期 etCardTime imgCardTime&ndash;&gt;-->
+            <!--<com.dhcc.dhccpay.view.SignForm-->
+                <!--android:id="@+id/etCardTime"-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:title_txt="有  效  期"-->
+                <!--app:title_txtcolor="@color/main_title_color"-->
+                <!--app:title_txtSize="16sp"-->
+                <!--app:title_txtStyle="bold"-->
+                <!--app:content_hint="请选择信用卡有效期"-->
+                <!--app:content_txtSize ="17sp"-->
+                <!--app:content_txtColor="@color/sub_title_color"-->
+                <!--app:content_hintColor="@color/datepicker_disable_bg_color"-->
+                <!--app:content_Editable="false"-->
+                <!--android:layout_marginBottom="1px"-->
+                <!--&gt;</com.dhcc.dhccpay.view.SignForm>-->
 
 
-            <Button
-                android:id="@+id/signBtn"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/sign_btn_bg"
-                android:text="确认签约"
-                android:textColor="#fff"
-                android:textSize="18sp" />
-        </LinearLayout>
-    </ScrollView>
+            <!--&lt;!&ndash;cvv2&ndash;&gt;-->
+            <!--<com.dhcc.dhccpay.view.SignForm-->
+                <!--android:id="@+id/etCVV2Id"-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:title_txt="C V V 2   "-->
+                <!--app:title_txtcolor="@color/main_title_color"-->
+                <!--app:title_txtSize="16sp"-->
+                <!--app:title_txtStyle="bold"-->
+                <!--app:content_hint="请输入CVV2号码"-->
+                <!--app:content_txtSize ="17sp"-->
+                <!--app:content_txtColor="@color/sub_title_color"-->
+                <!--app:content_hintColor="@color/datepicker_disable_bg_color"-->
+                <!--android:layout_marginBottom="1px"-->
+                <!--&gt;</com.dhcc.dhccpay.view.SignForm>-->
+
+            <!--&lt;!&ndash;证件类型 etCertCardType imgCertCardType&ndash;&gt;-->
+            <!--<com.dhcc.dhccpay.view.SignForm-->
+                <!--android:id="@+id/etCertCardType"-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:title_txt="证件类型"-->
+                <!--app:title_txtcolor="@color/main_title_color"-->
+                <!--app:title_txtSize="16sp"-->
+                <!--app:title_txtStyle="bold"-->
+                <!--app:content_hint="请选择证件类型"-->
+                <!--app:content_txtSize ="17sp"-->
+                <!--app:content_txtColor="@color/sub_title_color"-->
+                <!--app:content_hintColor="@color/datepicker_disable_bg_color"-->
+                <!--android:layout_marginBottom="1px"-->
+                <!--&gt;</com.dhcc.dhccpay.view.SignForm>-->
+
+            <!--&lt;!&ndash;证件号etCertCardId&ndash;&gt;-->
+            <!--<com.dhcc.dhccpay.view.SignForm-->
+                <!--android:id="@+id/etCertCardId"-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:title_txt="证件号码"-->
+                <!--app:title_txtcolor="@color/main_title_color"-->
+                <!--app:title_txtSize="16sp"-->
+                <!--app:title_txtStyle="bold"-->
+                <!--app:content_hint="请输入证件号码"-->
+                <!--app:content_txtSize ="17sp"-->
+                <!--app:content_txtColor="@color/sub_title_color"-->
+                <!--app:content_hintColor="@color/datepicker_disable_bg_color"-->
+                <!--android:layout_marginBottom="1px"-->
+                <!--&gt;</com.dhcc.dhccpay.view.SignForm>-->
+
+            <!--&lt;!&ndash;手机号etPhoneNum&ndash;&gt;-->
+            <!--<com.dhcc.dhccpay.view.SignForm-->
+                <!--android:id="@+id/etPhoneNum"-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:title_txt="手  机  号"-->
+                <!--app:title_txtcolor="@color/main_title_color"-->
+                <!--app:title_txtSize="16sp"-->
+                <!--app:title_txtStyle="bold"-->
+                <!--app:content_hint="请输入手机号码"-->
+                <!--app:content_txtSize ="17sp"-->
+                <!--app:content_txtColor="@color/sub_title_color"-->
+                <!--app:content_hintColor="@color/datepicker_disable_bg_color"-->
+                <!--app:content_digits="1234567890"-->
+                <!--android:layout_marginBottom="1px"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--&gt;</com.dhcc.dhccpay.view.SignForm>-->
+
+            <!--&lt;!&ndash;验证码 etCode imgCertCardType&ndash;&gt;-->
+            <!--<com.dhcc.dhccpay.view.SignForm-->
+                <!--android:id="@+id/etCode"-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:title_txt="验  证  码"-->
+                <!--app:title_txtcolor="@color/main_title_color"-->
+                <!--app:title_txtSize="16sp"-->
+                <!--app:title_txtStyle="bold"-->
+                <!--app:content_hint="请输入验证码"-->
+                <!--app:content_txtSize ="17sp"-->
+                <!--app:content_txtColor="@color/sub_title_color"-->
+                <!--app:content_hintColor="@color/datepicker_disable_bg_color"-->
+                <!--app:content_digits="1234567890"-->
+                <!--android:layout_marginBottom="1px"-->
+                <!--&gt;</com.dhcc.dhccpay.view.SignForm>-->
+
+
+            <!--<Button-->
+                <!--android:id="@+id/signBtn"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginLeft="15dp"-->
+                <!--android:layout_marginRight="15dp"-->
+                <!--android:background="@drawable/sign_btn_bg"-->
+                <!--android:text="确认签约"-->
+                <!--android:textColor="#fff"-->
+                <!--android:textSize="18sp" />-->
+        <!--</LinearLayout>-->
+    <!--</ScrollView>-->
 
 </LinearLayout>

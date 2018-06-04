@@ -7,7 +7,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.widget.Toast;
 
-import com.idt.yfzx.wdc.lightofandroidadvanced.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
