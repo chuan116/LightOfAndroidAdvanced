@@ -20,6 +20,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -57,17 +58,19 @@ public final class ViewfinderView extends View {
   private int scannerAlpha;
   private List<ResultPoint> possibleResultPoints;
   private List<ResultPoint> lastPossibleResultPoints;
-
+  private  int  scanLineTop  = 0 ;
+  private int  SCAN_VELOCITY = 10 ;
+  private Context mcontext ;
   // This constructor is used when the class is built from an XML resource.
   public ViewfinderView(Context context, AttributeSet attrs) {
     super(context, attrs);
-
+    mcontext  = context;
     // Initialize these once for performance rather than calling them every time in onDraw().
     paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     Resources resources = getResources();
     maskColor = resources.getColor(R.color.viewfinder_mask);
     resultColor = resources.getColor(R.color.result_view);
-    laserColor = resources.getColor(R.color.viewfinder_laser);
+    laserColor = resources.getColor(R.color.deepskyblue);
     resultPointColor = resources.getColor(R.color.possible_result_points);
     scannerAlpha = 0;
     possibleResultPoints = new ArrayList<>(5);
@@ -110,7 +113,8 @@ public final class ViewfinderView extends View {
       paint.setAlpha(SCANNER_ALPHA[scannerAlpha]);
       scannerAlpha = (scannerAlpha + 1) % SCANNER_ALPHA.length;
       int middle = frame.height() / 2 + frame.top;
-      canvas.drawRect(frame.left + 5, middle - 1, frame.right - 1, middle + 2, paint);
+//      canvas.drawRect(frame.left + 5, middle - 1, frame.right - 1, middle + 2, paint);
+      drawScanLight(canvas,frame);
       drawBorder(canvas, frame);
 
 
@@ -164,29 +168,48 @@ public final class ViewfinderView extends View {
    * */
 
   private void drawBorder(Canvas canvas, Rect frame) {
+    int  borderWidth   =  7;
+     int  boderheight  = 100;
     //划边框
     Paint paintBorder  = new Paint() ;
     paintBorder.setColor(laserColor);
     //左上竖边框
-    canvas.drawRect(frame.left, frame.top, frame.left + 5, frame.top + 100, paintBorder);
+    canvas.drawRect(frame.left, frame.top, frame.left + borderWidth, frame.top + boderheight, paintBorder);
     //左上横边框
-    canvas.drawRect(frame.left, frame.top, frame.left + 100, frame.top + 5, paintBorder);
+    canvas.drawRect(frame.left, frame.top, frame.left + boderheight, frame.top + borderWidth, paintBorder);
     //右上竖边框
-    canvas.drawRect(frame.right-5, frame.top, frame.right, frame.top + 100, paintBorder);
+    canvas.drawRect(frame.right-borderWidth, frame.top, frame.right, frame.top + boderheight, paintBorder);
     //右上横边框
-    canvas.drawRect(frame.right-100, frame.top, frame.right, frame.top + 5, paintBorder);
+    canvas.drawRect(frame.right-boderheight, frame.top, frame.right, frame.top + borderWidth, paintBorder);
 
     int bottom  = frame.top+frame.height();
     //左下竖边框
-    canvas.drawRect(frame.left, bottom-100, frame.left + 5, bottom, paintBorder);
+    canvas.drawRect(frame.left, bottom-boderheight, frame.left + borderWidth, bottom, paintBorder);
 
     //左下横边框
-    canvas.drawRect(frame.left, bottom-5, frame.left+100, bottom, paintBorder);
+    canvas.drawRect(frame.left, bottom-borderWidth, frame.left+boderheight, bottom, paintBorder);
 //      //右下竖边框
-    canvas.drawRect(frame.right-5, bottom-100, frame.right, bottom, paintBorder);
+    canvas.drawRect(frame.right-borderWidth, bottom-boderheight, frame.right, bottom, paintBorder);
 //      //右下横边框
-    canvas.drawRect(frame.right-100, bottom-5, frame.right, bottom, paintBorder);
+    canvas.drawRect(frame.right-boderheight, bottom-borderWidth, frame.right, bottom, paintBorder);
   }
+
+  private void drawScanLight(Canvas canvas, Rect frame) {
+
+    if (scanLineTop == 0) {
+      scanLineTop = frame.top;
+    }
+
+    if (scanLineTop >= frame.bottom - 30) {
+      scanLineTop = frame.top;
+    } else {
+      scanLineTop += SCAN_VELOCITY;// SCAN_VELOCITY可以在属性中设置，默认为5
+    }
+    Rect scanRect = new Rect(frame.left, scanLineTop, frame.right, scanLineTop + 30);
+    Bitmap  scanLight   = BitmapFactory.decodeResource(mcontext.getResources(),R.mipmap.scan_light);
+    canvas.drawBitmap(scanLight, null, scanRect, paint);
+  }
+
 
   public void drawViewfinder() {
     Bitmap resultBitmap = this.resultBitmap;

@@ -86,7 +86,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     super.onCreate(icicle);
     Window window = getWindow();
     window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-    setContentView(R.layout.capture);
+    setContentView(R.layout.activity_zxing_entrance);
     hasSurface = false;
     inactivityTimer = new InactivityTimer(this);
     beepManager = new BeepManager(this);
