@@ -3,6 +3,12 @@
     package="com.idt.yfzx.wdc.lightofandroidadvanced">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".Application.MyApplication"
@@ -36,18 +42,20 @@
         <activity android:name=".activity.NotificationActivity" />
         <activity android:name=".activity.CustomActivity" />
         <activity android:name=".activity.BezierPathActivity" />
-        <activity android:name=".activity.Otto.OttoEntrance"></activity>
+        <activity android:name=".activity.Otto.OttoEntrance" />
         <activity android:name=".activity.Otto.OttoActivityB" />
         <activity android:name=".activity.SignActivity" />
-        <activity android:name=".activity.EventBus.EventBusA">
-
-        </activity>
+        <activity android:name=".activity.EventBus.EventBusA" />
         <activity android:name=".activity.EventBus.EventBusB" />
-        <activity android:name=".activity.RXJava.RXJavaActivity">
-
+        <activity android:name=".activity.RXJava.RXJavaActivity" />
+        <activity android:name=".mvp.view.MVP_Entrance" />
+        <activity android:name=".myAnnotation.AnnotationActivity" />
+        <activity android:name=".activity.PermissionTestActivity" />
+        <activity android:name=".activity.zxing.CaptureActivity">
+        </activity>
+        <activity android:name=".TouTiao.activity.TouTiaoMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
