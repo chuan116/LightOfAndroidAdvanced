@@ -8,17 +8,14 @@ import android.support.v7.widget.RecyclerView;
 
 import com.idt.yfzx.wdc.lightofandroidadvanced.R;
 import com.idt.yfzx.wdc.lightofandroidadvanced.adapter.NewsListAdapter;
-import com.idt.yfzx.wdc.lightofandroidadvanced.entity.NewsItemEntity;
 import com.idt.yfzx.wdc.lightofandroidadvanced.entity.Trailers;
-import com.idt.yfzx.wdc.lightofandroidadvanced.model.NewsModel;
-import com.idt.yfzx.wdc.lightofandroidadvanced.model.impl.NewsModelImpl;
+import com.idt.yfzx.wdc.lightofandroidadvanced.mvp.model.IModel;
+import com.idt.yfzx.wdc.lightofandroidadvanced.mvp.model.impl.IModelImpl;
 
-import java.util.List;
-
-public class NewsList extends AppCompatActivity implements NewsModel.OnNewsLoadListener {
+public class NewsList extends AppCompatActivity  {
 
     protected RecyclerView rv;
-    protected NewsModelImpl modelImpl;
+    protected IModelImpl modelImpl;
     protected NewsListAdapter adapter;
 
     @Override
@@ -33,23 +30,20 @@ public class NewsList extends AppCompatActivity implements NewsModel.OnNewsLoadL
         rv = (RecyclerView) findViewById(R.id.rv);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setItemAnimator(new DefaultItemAnimator());
-        modelImpl = new NewsModelImpl();
+        modelImpl = new IModelImpl();
     }
 
-    @Override
     public void onSuccess(Trailers result_list) {
         System.out.println(result_list.toString());
         adapter = new NewsListAdapter(result_list.getTrailers(), this);
         rv.setAdapter(adapter);
     }
 
-    @Override
     public void onFail(Trailers result_list) {
 
     }
 
     public void loadData() {
-        modelImpl.getTopNewsList(this, this);
 
     }
 }

@@ -1,4 +1,4 @@
-package com.idt.yfzx.wdc.lightofandroidadvanced.model.impl;
+package com.idt.yfzx.wdc.lightofandroidadvanced.mvp.model.impl;
 
 import android.content.Context;
 
@@ -8,23 +8,16 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.idt.yfzx.wdc.lightofandroidadvanced.entity.NewsItemEntity;
 import com.idt.yfzx.wdc.lightofandroidadvanced.entity.Trailers;
-import com.idt.yfzx.wdc.lightofandroidadvanced.model.NewsModel;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
+import com.idt.yfzx.wdc.lightofandroidadvanced.mvp.model.IModel;
 
 /**
  * Created by 王大川 on 2018-03-15.
  */
-public class NewsModelImpl implements NewsModel {
+public class IModelImpl implements IModel {
     Trailers result_list = null;
 
-    @Override
-    public void getTopNewsList(Context context, final OnNewsLoadListener onWeatherLoadListener) {
+    public void getTopNewsList(Context context ){
 
         // 1 创建一个请求队列
         RequestQueue requestQueue = Volley.newRequestQueue(context);
@@ -36,7 +29,7 @@ public class NewsModelImpl implements NewsModel {
             @Override
             public void onResponse(String s) {
                 resloveJson(s);
-                onWeatherLoadListener.onSuccess(result_list);
+//                onWeatherLoadListener.onSuccess(result_list);
             }
         }, new Response.ErrorListener() {// 发生异常后的监听回调
             @Override
@@ -48,12 +41,14 @@ public class NewsModelImpl implements NewsModel {
         requestQueue.add(stringRequest);
     }
 
-
     public void resloveJson(String s) {
         Gson gson = new Gson();
         result_list = gson.fromJson(s, Trailers.class);
-
     }
 
 
+    @Override
+    public void getTopNewsList() {
+
+    }
 }

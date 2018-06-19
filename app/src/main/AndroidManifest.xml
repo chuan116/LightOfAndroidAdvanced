@@ -44,7 +44,6 @@
         <activity android:name=".activity.BezierPathActivity" />
         <activity android:name=".activity.Otto.OttoEntrance" />
         <activity android:name=".activity.Otto.OttoActivityB" />
-        <activity android:name=".activity.SignActivity" />
         <activity android:name=".activity.EventBus.EventBusA" />
         <activity android:name=".activity.EventBus.EventBusB" />
         <activity android:name=".activity.RXJava.RXJavaActivity" />
