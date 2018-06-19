@@ -3,7 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="textColorPrimary">#616161</color>
+    <color name="textColorPrimary">#FFF0F5</color>
     <color name="white">#FFFFFF</color> <!--白色 -->
     <color name="ivory">#FFFFF0</color> <!--象牙色 -->
     <color name="lightyellow">#FFFFE0</color> <!--亮黄色 -->
@@ -150,7 +150,6 @@
     <color name="darkblue">#00008B</color> <!--暗蓝色 -->
     <color name="navy">#000080</color> <!--海军色 -->
     <color name="black">#000000</color> <!--黑色 -->
-    <color name="Blue_Grey">#607d8b</color><!--马蓝灰-->
 
 
     <!--zxing -->
@@ -165,4 +164,8 @@
     <color name="transparent">#00000000</color>
     <color name="viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
     <color name="viewfinder_mask">#60000000</color>
+    <color name="Blue_Grey">#607d8b</color><!--马蓝灰-->
+
+
+
 </resources>
