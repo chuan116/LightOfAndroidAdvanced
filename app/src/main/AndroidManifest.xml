@@ -21,12 +21,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".activity.TabLayoutViewPager" />
 
@@ -49,15 +43,29 @@
         <activity android:name=".activity.EventBus.EventBusB" />
         <activity android:name=".activity.RXJava.RXJavaActivity" />
         <activity android:name=".mvp.view.MVP_Entrance" />
-        <activity android:name=".myAnnotation.AnnotationActivity"></activity>
+        <activity android:name=".myAnnotation.AnnotationActivity" />
         <activity android:name=".activity.PermissionTestActivity" />
         <activity android:name=".activity.zxing.CaptureActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
 
         </activity>
+        <activity android:name=".activity.Database.ContentProviderActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <provider
+            android:name=".database.MyProvider"
+            android:authorities="com.idt.yfzx.wdc.lightofandroidadvanced.MyProvider"
+            android:exported="true" />
     </application>
 
 </manifest>
